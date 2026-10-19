@@ -43,6 +43,8 @@ def main():
     ap.add_argument("--salvo", nargs="*", default=[],
                     help="ids de piezas que NO se publican (quedan en 'omitido')")
     ap.add_argument("--revocar", action="store_true")
+    ap.add_argument("--ya-publicada", nargs="*", default=[], dest="ya_publicada",
+                    help="ids de piezas que ya salieron a mano, fuera del motor")
     ap.add_argument("--listar", action="store_true")
     a = ap.parse_args()
 
@@ -56,6 +58,31 @@ def main():
         print(f"No existe el lote {a.lote}.", file=sys.stderr)
         listar(cola)
         return 1
+
+    if a.ya_publicada:
+        # Una pieza publicada a mano tiene que quedar registrada igual: si no, el
+        # worker la trata como pendiente, y sobre todo `metricas.py` no la cruza
+        # con ninguna pieza y la reporta como "(fuera de la cola)", ensuciando el
+        # histórico con el que después aprende el motor.
+        encontradas = 0
+        for p in lote["piezas"]:
+            if p["id"] in a.ya_publicada:
+                p["estado"] = "publicado"
+                p["publicado_el"] = datetime.now().isoformat(timespec="seconds")
+                p["ultimo_error"] = None
+                p["publicado_a_mano"] = True
+                encontradas += 1
+                print(f"{p['id']}: marcada como ya publicada (a mano, fuera del motor).")
+        faltan = set(a.ya_publicada) - {p["id"] for p in lote["piezas"]}
+        if faltan:
+            print(f"No están en este lote: {', '.join(sorted(faltan))}", file=sys.stderr)
+        if not encontradas:
+            return 1
+        json.dump(cola, open(COLA, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+        print("\nEl media_id queda vacío porque no pasó por la API. `metricas.py` la va "
+              "a traer igual desde Windsor, pero sin el cruce automático por media_id.")
+        if not a.por and not a.revocar:
+            return 0
 
     if a.revocar:
         lote["aprobado"] = False

@@ -24,12 +24,13 @@
             "publicar/2026-10-19/06.jpg"
           ],
           "caption": "Tu equipo ya usa IA. La pregunta es con qué datos.\n\nEn una encuesta a 402 pymes argentinas, solo 3,3% tenía una política escrita de uso de IA. El riesgo más común no parece un ataque: alguien pega un contrato o una lista de clientes en un chat gratuito para ganar tiempo.\n\nPrimer paso: clasificá tu información en pública, sensible y crítica, y definí qué nunca entra en una IA gratuita.\n\nEscribinos y hablamos.\n\n#inteligenciaartificial #ciberseguridad #PyMEArgentina #IngenieríaConPropósito #Mendoza",
-          "estado": "pendiente",
-          "media_id": null,
-          "permalink": null,
-          "publicado_el": null,
+          "estado": "publicado",
+          "media_id": "18105602765289908",
+          "permalink": "https://www.instagram.com/p/DerndpUjvkf/",
+          "publicado_el": "2026-10-19T12:58:03",
           "intentos": 0,
-          "ultimo_error": null
+          "ultimo_error": null,
+          "publicado_a_mano": true
         },
         {
           "id": "2026-10-20-carrusel",
