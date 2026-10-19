@@ -112,9 +112,11 @@ AAAA-MM-DD/v2_motor/   piezas de la semana en curso (PNG/MP4 + pieza.md)
 publicado/             piezas ya publicadas, archivadas
 publicar/              JPEG derivados que consume Instagram (generados)
 Metricas/              métricas semanales (generadas por la Action)
-scripts/               armar_cola - aprobar - publicar - metricas
+scripts/               armar_cola - verificar - aprobar - publicar - metricas - corregir
 cola.json              estado de publicación — la fuente de verdad del worker
-config.json            cuenta, horarios y reglas duras
+config.json            cuenta, horarios, reglas duras y auto-aprobación
+reglas.json            las reglas de marca, en forma ejecutable
+Correcciones.md        memoria de todo lo que Nicolás y Joaquín corrigieron
 ```
 
 ## Dónde vive cada cosa
