@@ -18,14 +18,19 @@ accesibles sin credenciales. Lo que no es público es el motor que los genera
                AAAA-MM-DD/v2_motor/ con los PNG/MP4 y el pieza.md
  2. ARMAR      python3 scripts/armar_cola.py
                convierte a JPEG y escribe cola.json  ->  lote SIN APROBAR
- 3. APROBAR    python3 scripts/aprobar.py <lote> --por "Nicolás"
-               compuerta humana: sin esto no se publica nada
- 4. PUBLICAR   GitHub Actions, cada hora, sin intervención
+ 3. VERIFICAR  python3 scripts/verificar.py
+               chequea cada pieza contra las reglas de marca de reglas.json
+ 4. APROBAR    automático a las 36 h si la verificación dio limpia,
+               o a mano con scripts/aprobar.py. Con un solo bloqueo, el
+               lote NUNCA se auto-aprueba: espera a una persona.
+ 5. PUBLICAR   GitHub Actions, cada hora, sin intervención
                publica cada pieza en su día y horario vía Windsor.ai
- 5. MEDIR      GitHub Actions, los lunes
+ 6. MEDIR      GitHub Actions, los lunes
                trae Insights y los deja en Metricas/
- 6. APRENDER   cierre mensual — akyra-aprendizaje lee Metricas/ y actualiza
-               el motor dentro de sus límites de autonomía
+ 7. CORREGIR   python3 scripts/corregir.py "lo que estuvo mal" --pieza ...
+               lo verificable se vuelve regla; el resto queda en Correcciones.md
+ 8. APRENDER   cierre mensual — akyra-aprendizaje cruza Metricas/ con
+               Correcciones.md y actualiza el motor
 ```
 
 Los pasos 4 y 5 corren en la nube: no hace falta que la Mac esté prendida ni
@@ -56,6 +61,32 @@ DRY_RUN=1 python3 scripts/publicar.py
 Después de aprobar hay que `git push`: el worker de la nube lee `cola.json`
 desde GitHub, no desde la Mac.
 
+## Cómo aprende el motor
+
+Son dos circuitos distintos y los dos terminan cambiando cómo se genera el contenido:
+
+**De lo que corregís vos.** Cada vez que una pieza está mal, se registra:
+
+```bash
+# Si el error se puede detectar con una expresión regular, se vuelve regla
+python3 scripts/corregir.py "No usar 'solución' en los hooks, suena a vendedor" \
+    --pieza 2026-10-22 --patron "(?i)\bsoluci[oó]n" --donde hook
+
+# Si es de criterio, queda anotada para quien genere la semana siguiente
+python3 scripts/corregir.py "El ejemplo tiene que ser de la zona, no de Buenos Aires" \
+    --pieza 2026-10-22
+```
+
+Una corrección con patrón se suma a `reglas.json` y a partir de ahí se verifica
+sola en todos los lotes, para siempre. Ese es el punto: lo que se corrige una
+vez no se vuelve a corregir.
+
+**De los números.** La Action de los lunes carga las métricas, y el cierre
+mensual de `akyra-aprendizaje` las cruza con `Correcciones.md` — buscando tanto
+qué rinde como qué tipo de error se repite en lo que venís corrigiendo.
+
+Ver `Correcciones.md` (la memoria) y `reglas.json` (lo ejecutable).
+
 ## Las reglas duras que el worker verifica solo
 
 Están en `config.json` y salen del propio motor, no las inventó la
@@ -66,8 +97,13 @@ automatización:
 | 1 sola pieza de **feed** por día (las historias no cuentan) | `akyra-estrategia-semanal` v1.12 y v1.15, sobre el análisis de 48 piezas de mayo-julio 2026 |
 | Carruseles de 2 a 10 slides, JPEG, ratio 4:5 a 1.91:1 | límite de la API de Instagram |
 | Caption de hasta 2200 caracteres | límite de la API de Instagram |
-| Ningún lote se publica sin aprobación nominal | regla 7 de `akyra-branding-base` |
-| Una pieza que se pasó más de 90 min de su horario no sale sola | decisión de diseño: publicar a destiempo es peor que no publicar |
+| Ningún lote se auto-aprueba con un bloqueo pendiente | la compuerta humana no desaparece: se invierte en ventana de objeción |
+| Una pieza que se pasó más de 48 h de su horario espera decisión humana | pedido de Nicolás: que salga tarde antes que no salga, pero las piezas citan noticias con fecha |
+
+Más las 13 reglas de marca de `reglas.json` (no certificar, voseo rioplatense,
+hook de 8 palabras, sin emojis, fuente verificada, convivencia de colores,
+matiz por pilar, anti-repetición de esqueleto…), cada una citando la skill y
+versión de donde sale.
 
 ## Estructura
 
