@@ -1,0 +1,42 @@
+name: Capturar métricas
+
+# Lunes 10:00 Mendoza (13:00 UTC): trae los números de las piezas publicadas la
+# semana anterior, con 72 h de rezago para que el alcance esté asentado. Es lo
+# que alimenta a akyra-aprendizaje en el cierre de mes.
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+    inputs:
+      desde:
+        description: "Fecha desde (AAAA-MM-DD)"
+        required: false
+      hasta:
+        description: "Fecha hasta (AAAA-MM-DD)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  metricas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Traer métricas de Windsor
+        env:
+          WINDSOR_API_KEY: ${{ secrets.WINDSOR_API_KEY }}
+        run: python3 scripts/metricas.py ${{ inputs.desde }} ${{ inputs.hasta }}
+
+      - name: Guardar en el repo
+        run: |
+          git config user.name "AKYRA Motor de Redes"
+          git config user.email "motor@akyra.local"
+          git add Metricas/
+          git diff --staged --quiet || git commit -m "Métricas de la semana (automático)"
+          git push

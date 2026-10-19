@@ -1,0 +1,38 @@
+name: Publicar en Instagram
+
+# Corre cada hora y publica solo lo que ya llegó a su horario dentro de un lote
+# aprobado. El cron de GitHub es UTC; Mendoza es UTC-3, pero el script compara
+# contra la hora local de la zona configurada en config.json, así que la
+# frecuencia horaria alcanza sin tener que traducir el cron a mano.
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Simular sin publicar"
+        type: boolean
+        default: true
+
+concurrency:
+  group: publicar-instagram
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Publicar lo que corresponda
+        env:
+          WINDSOR_API_KEY: ${{ secrets.WINDSOR_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: python3 scripts/publicar.py
