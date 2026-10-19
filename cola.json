@@ -1,0 +1,148 @@
+{
+  "version": "1.0",
+  "zona_horaria": "America/Argentina/Mendoza",
+  "lotes": [
+    {
+      "id": "lote-20261019-1247",
+      "rango": "2026-10-19 a 2026-10-24",
+      "creado_el": "2026-10-19T12:47:14",
+      "aprobado": false,
+      "aprobado_por": null,
+      "aprobado_el": null,
+      "piezas": [
+        {
+          "id": "2026-10-19-carrusel",
+          "fecha": "2026-10-19",
+          "formato": "carrusel",
+          "fecha_hora_local": "2026-10-19T09:00:00",
+          "assets": [
+            "publicar/2026-10-19/01.jpg",
+            "publicar/2026-10-19/02.jpg",
+            "publicar/2026-10-19/03.jpg",
+            "publicar/2026-10-19/04.jpg",
+            "publicar/2026-10-19/05.jpg",
+            "publicar/2026-10-19/06.jpg"
+          ],
+          "caption": "Tu equipo ya usa IA. La pregunta es con qué datos.\n\nEn una encuesta a 402 pymes argentinas, solo 3,3% tenía una política escrita de uso de IA. El riesgo más común no parece un ataque: alguien pega un contrato o una lista de clientes en un chat gratuito para ganar tiempo.\n\nPrimer paso: clasificá tu información en pública, sensible y crítica, y definí qué nunca entra en una IA gratuita.\n\nEscribinos y hablamos.\n\n#inteligenciaartificial #ciberseguridad #PyMEArgentina #IngenieríaConPropósito #Mendoza",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-20-carrusel",
+          "fecha": "2026-10-20",
+          "formato": "carrusel",
+          "fecha_hora_local": "2026-10-20T09:00:00",
+          "assets": [
+            "publicar/2026-10-20/01.jpg",
+            "publicar/2026-10-20/02.jpg",
+            "publicar/2026-10-20/03.jpg",
+            "publicar/2026-10-20/04.jpg",
+            "publicar/2026-10-20/05.jpg",
+            "publicar/2026-10-20/06.jpg"
+          ],
+          "caption": "Si elaborás o vendés alimentos, esto te interesa: desde el Decreto 697/2026, el carnet de manipulador vale en todo el país y no vence una vez otorgado. Un trámite menos.\n\nPero lo importante no cambió: las Buenas Prácticas de Manufactura siguen siendo obligatorias. Menos trámite no es menos control. Repasar lo básico con tu equipo antes de cada temporada sigue siendo tu mejor seguro.\n\n¿Cada cuánto lo repasan? Contanos en los comentarios.\n\n#emprendedorargentino #microempresas #seguridadalimentaria #IngenieríaConPropósito #SanRafael",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-21-reel",
+          "fecha": "2026-10-21",
+          "formato": "reel",
+          "fecha_hora_local": "2026-10-21T09:00:00",
+          "assets": [
+            "2026-10-21/v2_motor/Reel_Stock_Parado_LISTO.mp4"
+          ],
+          "caption": "En julio, las pymes industriales relevadas por CAME contaron que evitaron acumular stock parado para cuidar la caja. En un comercio o emprendimiento pasa lo mismo: cada producto quieto en la estantería es plata que no podés usar.\n\nComprá según lo que rota, no por las dudas, y revisá qué no se vendió en los últimos 60 días.\n\nContanos en los comentarios qué producto se te queda quieto.\n\n#emprendedorargentino #microempresas #mejoracontinua #IngenieríaConPropósito #SanRafael",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-22-carrusel",
+          "fecha": "2026-10-22",
+          "formato": "carrusel",
+          "fecha_hora_local": "2026-10-22T09:00:00",
+          "assets": [
+            "publicar/2026-10-22/01.jpg",
+            "publicar/2026-10-22/02.jpg",
+            "publicar/2026-10-22/03.jpg",
+            "publicar/2026-10-22/04.jpg",
+            "publicar/2026-10-22/05.jpg",
+            "publicar/2026-10-22/06.jpg"
+          ],
+          "caption": "La ciruela del Sur se exporta mayormente a granel: se reprocesa y se reenvasa en destino, y ese margen se queda afuera, como explicó Oscar Morbidelli (AACI) en LV18. Chile, en cambio, vende buena parte fraccionada.\n\nDar ese paso exige un sistema de calidad que funcione todos los días: inocuidad, envase, rótulo y trazabilidad, según lo que pida cada comprador. En AKYRA te acompañamos en la implementación.\n\nEscribinos y hablamos.\n\n#agroindustria #ciruela #exportación #IngenieríaConPropósito #SanRafael",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-23-carrusel",
+          "fecha": "2026-10-23",
+          "formato": "carrusel",
+          "fecha_hora_local": "2026-10-23T09:00:00",
+          "assets": [
+            "publicar/2026-10-23/01.jpg",
+            "publicar/2026-10-23/02.jpg",
+            "publicar/2026-10-23/03.jpg",
+            "publicar/2026-10-23/04.jpg",
+            "publicar/2026-10-23/05.jpg",
+            "publicar/2026-10-23/06.jpg"
+          ],
+          "caption": "Si todavía cargás facturas a mano, probá esto: sacale una foto y pedile a la IA que la pase a una tabla con fecha, proveedor y total. Después copiás y pegás en tu planilla.\n\nDos reglas: revisá siempre los totales (un número borroso se lee mal) y usalo con tus comprobantes, no con datos sensibles de clientes.\n\n¿Cuántas facturas cargás por mes? Contanos en los comentarios.\n\n#IAparaemprendedores #inteligenciaartificial #emprendedorargentino #productividad #AKYRA",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-24-reel",
+          "fecha": "2026-10-24",
+          "formato": "reel",
+          "fecha_hora_local": "2026-10-24T09:00:00",
+          "assets": [
+            "2026-10-24/v2_motor/Reel_Si_Vos_No_Estas_LISTO.mp4"
+          ],
+          "caption": "Si vos no estás, ¿la planta se frena o se hace mal? Ese es el problema, no vos.\n\nCuando todo pasa por el dueño, el dueño se convierte en el cuello de botella. Dos pasos para empezar: escribí cómo se hacen las tareas que más se repiten, y definí qué decisiones puede tomar el equipo sin llamarte.\n\nContanos en los comentarios qué decisión todavía pasa solo por vos.\n\n#mejoracontinua #leanmanufacturing #PyMEArgentina #IngenieríaConPropósito #SanRafael",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-24-historia",
+          "fecha": "2026-10-24",
+          "formato": "historia",
+          "fecha_hora_local": "2026-10-24T12:00:00",
+          "assets": [
+            "publicar/2026-10-24/historia.jpg"
+          ],
+          "caption": null,
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        }
+      ]
+    }
+  ]
+}

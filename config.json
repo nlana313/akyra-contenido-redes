@@ -1,0 +1,25 @@
+{
+  "zona_horaria": "America/Argentina/Mendoza",
+  "cuenta_instagram": {
+    "usuario": "akyraconsultora",
+    "account_id": "17841427593153522",
+    "connector": "instagram"
+  },
+  "horarios_por_defecto": {
+    "_comentario": "Hora local de publicacion por formato. akyra-aprendizaje puede ajustarlos solo (categoria (a) - ejecucion tactica), citando la evidencia en la Bitacora.",
+    "carrusel": "09:00",
+    "reel": "09:00",
+    "imagen": "09:00",
+    "historia": "12:00"
+  },
+  "reglas_duras": {
+    "_comentario": "Verificadas por el worker antes de publicar. Fuente: akyra-estrategia-semanal v1.12/v1.15 y Analisis_Caida_Alcance_Agosto2026.md",
+    "max_piezas_feed_por_dia": 1,
+    "formatos_feed": ["carrusel", "reel", "imagen"],
+    "slides_min": 2,
+    "slides_max": 10,
+    "caption_max_caracteres": 2200
+  },
+  "ventana_publicacion_minutos": 90,
+  "max_intentos": 3
+}
