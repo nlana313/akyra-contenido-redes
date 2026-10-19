@@ -115,6 +115,40 @@ def commit(mensaje):
     os.system('git -C "%s" push -q || true' % RAIZ)
 
 
+def auto_aprobar(lote, ahora):
+    """Aprueba un lote sin intervención humana, pero solo si se ganó el derecho.
+
+    La compuerta humana no desaparece: se invierte. En vez de esperar un "sí",
+    se espera una objeción durante `horas_de_objecion`. Y el permiso para que eso
+    ocurra lo da `verificar.py`: si encontró un solo bloqueo contra las reglas de
+    marca, este lote no se auto-aprueba nunca — se queda esperando a una persona,
+    por más días que pasen.
+    """
+    cfg = CONFIG.get("auto_aprobacion", {})
+    if not cfg.get("habilitada") or lote.get("aprobado"):
+        return False
+
+    ver = lote.get("verificacion") or {}
+    if cfg.get("exige_verificacion_limpia", True):
+        if ver.get("estado") != "ok":
+            return False
+
+    creado = lote.get("creado_el")
+    if not creado:
+        return False
+    transcurridas = (ahora - datetime.fromisoformat(creado).replace(tzinfo=ahora.tzinfo))
+    if transcurridas < timedelta(hours=cfg.get("horas_de_objecion", 36)):
+        return False
+
+    lote["aprobado"] = True
+    lote["aprobado_por"] = "auto (verificación limpia + ventana de objeción)"
+    lote["aprobado_el"] = ahora.isoformat(timespec="seconds")
+    print(f"~ lote {lote['id']}: auto-aprobado "
+          f"(verificado el {ver.get('verificado_el','?')}, {ver.get('avisos',0)} aviso(s), "
+          f"sin objeciones en {cfg.get('horas_de_objecion',36)} h)")
+    return True
+
+
 def main():
     dry = os.environ.get("DRY_RUN") == "1"
     api_key = os.environ.get("WINDSOR_API_KEY")
@@ -134,6 +168,8 @@ def main():
     algo = False
 
     for lote in cola["lotes"]:
+        if auto_aprobar(lote, ahora):
+            algo = True
         for pieza in lote["piezas"]:
             if pieza["estado"] != "pendiente":
                 continue

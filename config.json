@@ -15,11 +15,22 @@
   "reglas_duras": {
     "_comentario": "Verificadas por el worker antes de publicar. Fuente: akyra-estrategia-semanal v1.12/v1.15 y Analisis_Caida_Alcance_Agosto2026.md",
     "max_piezas_feed_por_dia": 1,
-    "formatos_feed": ["carrusel", "reel", "imagen"],
+    "formatos_feed": [
+      "carrusel",
+      "reel",
+      "imagen"
+    ],
     "slides_min": 2,
     "slides_max": 10,
     "caption_max_caracteres": 2200
   },
-  "ventana_publicacion_minutos": 90,
-  "max_intentos": 3
+  "ventana_publicacion_minutos": 2880,
+  "max_intentos": 3,
+  "_nota_ventana": "48 h. Decisión de Nicolás (19/10/2026): si por un retraso del runner o una aprobación tardía la pieza no sale a horario, se publica igual apenas se pueda, en vez de cancelarse. El tope de 48 h existe porque las piezas citan noticias con fecha — más allá de eso el contenido puede haber envejecido y conviene que lo mire una persona.",
+  "auto_aprobacion": {
+    "_comentario": "Aprobación tácita. Un lote se aprueba solo cuando (a) está habilitada, (b) scripts/verificar.py no encontró ningún bloqueo, y (c) pasaron las horas de objeción desde que se generó, sin que nadie lo frenara. Si el verificador encuentra un solo bloqueo, el lote NUNCA se auto-aprueba: espera a una persona.",
+    "habilitada": true,
+    "horas_de_objecion": 36,
+    "exige_verificacion_limpia": true
+  }
 }

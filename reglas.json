@@ -1,0 +1,203 @@
+{
+  "_que_es": "Las reglas de marca de AKYRA, escritas de forma que una máquina pueda verificarlas sola sobre cada pieza antes de publicarla. Cada regla cita de dónde salió: la skill y versión que la documentó, o la corrección concreta de Nicolás/Joaquín que la originó. Ninguna regla se inventa acá — este archivo es la traducción ejecutable de lo que el motor ya tenía escrito en prosa, más lo que se va aprendiendo de las correcciones reales.",
+  "_como_crece": "Cuando Nicolás o Joaquín corrigen una pieza, se registra la corrección con `python3 scripts/corregir.py`. Si la corrección es verificable por máquina, se convierte en una regla nueva acá y el motor deja de cometer ese error. Si es de criterio editorial, queda registrada igual en Estado/Correcciones para que la lea quien genera la próxima semana.",
+  "version": "1.0",
+  "actualizado": "2026-10-19",
+  "reglas": [
+    {
+      "id": "R-001",
+      "titulo": "AKYRA no certifica ISO",
+      "origen": "akyra-branding-base v2.0 (25/08/2026) — sobreclaim heredado de la etapa AICAMP",
+      "tipo": "prohibido",
+      "aplica_a": [
+        "hook",
+        "slides",
+        "copy"
+      ],
+      "patron": "(?i)\\bcertificaci[oó]n(es)?\\b|\\bcertificar\\b|\\bcertificamos\\b|\\bte certific",
+      "excepciones": [
+        "(?i)certifica un organismo",
+        "(?i)organismo (externo )?certificador",
+        "(?i)no certificamos"
+      ],
+      "severidad": "bloquea",
+      "mensaje": "AKYRA implementa y acompaña sistemas de gestión; certifica un organismo externo. Reemplazar por 'implementación' o 'acompañamiento'."
+    },
+    {
+      "id": "R-002",
+      "titulo": "Español rioplatense, nunca neutro ni peninsular",
+      "origen": "akyra-branding-base — 'Siempre rioplatense: vos, hacés, podés. Nunca tú ni usted'",
+      "tipo": "prohibido",
+      "aplica_a": [
+        "hook",
+        "slides",
+        "copy"
+      ],
+      "patron": "(?i)\\b(t[uú] (puedes|tienes|debes|haces|sabes|quieres)|usted|ustedes|vosotros|puedes|tienes que|debes |haz |coge|ordenador|m[oó]vil)\\b",
+      "excepciones": [],
+      "severidad": "bloquea",
+      "mensaje": "Pasar a voseo rioplatense: podés, tenés, hacés, sabés, querés."
+    },
+    {
+      "id": "R-003",
+      "titulo": "Hook de 8 palabras o menos",
+      "origen": "akyra-carruseles v2.x y akyra-reels — estructura obligatoria del Slide 1",
+      "tipo": "limite",
+      "aplica_a": [
+        "hook"
+      ],
+      "metrica": "palabras",
+      "maximo": 8,
+      "severidad": "bloquea",
+      "mensaje": "El hook pierde fuerza y se corta en pantalla. Recortar a 8 palabras o menos."
+    },
+    {
+      "id": "R-004",
+      "titulo": "Sin emojis",
+      "origen": "Chequeo PO-COM-001, Anexo A — criterio C (Marca/Visual), sostenido en todos los lotes",
+      "tipo": "prohibido",
+      "aplica_a": [
+        "hook",
+        "slides",
+        "copy"
+      ],
+      "patron": "[\\U0001F300-\\U0001FAFF\\U00002600-\\U000027BF\\U0001F1E6-\\U0001F1FF]",
+      "excepciones": [],
+      "severidad": "bloquea",
+      "mensaje": "El tono de marca es profesional y cercano, sin emojis."
+    },
+    {
+      "id": "R-005",
+      "titulo": "Exactamente 5 hashtags",
+      "origen": "akyra-copy — banco de hashtags por segmento; sostenido en todos los lotes publicados",
+      "tipo": "limite",
+      "aplica_a": [
+        "hashtags"
+      ],
+      "metrica": "cantidad",
+      "minimo": 5,
+      "maximo": 5,
+      "severidad": "advierte",
+      "mensaje": "El estándar del motor son 5 hashtags."
+    },
+    {
+      "id": "R-006",
+      "titulo": "Copy de 60 a 80 palabras",
+      "origen": "Lotes aprobados: los copys van de 66 a 74 palabras de forma consistente",
+      "tipo": "limite",
+      "aplica_a": [
+        "copy"
+      ],
+      "metrica": "palabras",
+      "minimo": 55,
+      "maximo": 85,
+      "severidad": "advierte",
+      "mensaje": "Fuera del largo habitual del motor. Un copy muy largo se corta con el 'más' de Instagram."
+    },
+    {
+      "id": "R-007",
+      "titulo": "Todo dato externo va con fuente verificada",
+      "origen": "akyra-estrategia-semanal v1.7 (trazabilidad) + akyra-branding-base v2.10 (verificación de exactitud) — nace del error real con el Reglamento EUDR",
+      "tipo": "requerido",
+      "aplica_a": [
+        "pieza"
+      ],
+      "condicion_patron": "(?i)(\\b\\d{1,3}([.,]\\d+)?\\s*%|seg[uú]n |encuesta|estudio|relev[oó]|informe|decreto|ley |resoluci[oó]n|norma ISO|reglamento)",
+      "requiere_patron": "(?i)##\\s*Fuentes",
+      "requiere_ademas": "(?i)verificado",
+      "severidad": "bloquea",
+      "mensaje": "La pieza cita algo externo pero no tiene sección 'Fuentes' con link y marca de verificación. Verificar alcance real y vigencia, no de memoria."
+    },
+    {
+      "id": "R-008",
+      "titulo": "El CTA de Historia nunca pierde 'esta historia'",
+      "origen": "akyra-branding-base v2.15 (05/09/2026) — corrección de Nicolás sobre la Historia de portfolio ISO",
+      "tipo": "requerido",
+      "aplica_a": [
+        "historia"
+      ],
+      "requiere_patron": "(?i)esta historia",
+      "severidad": "bloquea",
+      "mensaje": "Sin 'esta historia' el CTA deja de decir qué hacer y genera la pregunta '¿qué respondo?'."
+    },
+    {
+      "id": "R-009",
+      "titulo": "Ámbar y Verde Salvia nunca en la misma pieza",
+      "origen": "akyra-branding-base v2.7 — regla de convivencia; excepción solo para piezas tipo Dupla",
+      "tipo": "exclusion_mutua",
+      "aplica_a": [
+        "pieza"
+      ],
+      "patrones": [
+        "(?i)[áa]mbar",
+        "(?i)verde salvia"
+      ],
+      "excepcion_si": "(?i)\\bdupla\\b|convergencia",
+      "severidad": "bloquea",
+      "mensaje": "Efecto arcoíris. Solo conviven en una pieza Dupla, con jerarquía y segregación por slide."
+    },
+    {
+      "id": "R-010",
+      "titulo": "El matiz por pilar no cambia nunca",
+      "origen": "akyra-branding-base v2.9 — 'el hue por pilar no cambia jamás, solo el paso de la escalera'",
+      "tipo": "mapa_pilar_color",
+      "aplica_a": [
+        "pieza"
+      ],
+      "mapa": {
+        "lean": "ambar",
+        "mejora continua": "ambar",
+        "iso 14001": "verde salvia",
+        "agroindustria": "verde salvia",
+        "ambiental": "verde salvia",
+        "ia": "cian",
+        "inteligencia artificial": "cian",
+        "institucional": "cian",
+        "calidad": "cian"
+      },
+      "severidad": "advierte",
+      "mensaje": "El color de acento no corresponde al pilar del tema. Lean/Mejora continua es familia Ámbar, ISO 14001/agro es Verde Salvia, IA/institucional es Cian."
+    },
+    {
+      "id": "R-011",
+      "titulo": "Máximo un resaltado por slide",
+      "origen": "akyra-branding-base v2.11 — criterio de moderación del resaltado .kw",
+      "tipo": "limite_por_slide",
+      "aplica_a": [
+        "slides"
+      ],
+      "patron": "\\*\\*[^*]+\\*\\*",
+      "maximo": 1,
+      "severidad": "advierte",
+      "mensaje": "Si se resalta todo, no resalta nada. Reservarlo al dato más fuerte de esa pantalla."
+    },
+    {
+      "id": "R-012",
+      "titulo": "CTA 'PLANTA' solo con campaña activa",
+      "origen": "akyra-branding-base v2.0 — restringido a campaña Taller IA; guardrail repetido en akyra-aprendizaje",
+      "tipo": "prohibido_condicional",
+      "aplica_a": [
+        "slides",
+        "copy"
+      ],
+      "patron": "\\bPLANTA\\b",
+      "permitido_si_ofertas_activas": true,
+      "severidad": "bloquea",
+      "mensaje": "Ninguna pieza puede usar lenguaje de inscripción sobre una oferta que Ofertas_Activas.md no tenga abierta.",
+      "_nota": "Sin (?i) a propósito: la palabra clave de CTA se escribe siempre en mayúsculas (Escribime 'PLANTA'). En minúscula, 'planta' es el sustantivo común que aparece en casi toda pieza de ICP1 — hacerla case-insensitive bloqueaba piezas correctas."
+    },
+    {
+      "id": "R-013",
+      "titulo": "No repetir el esqueleto de una pieza reciente",
+      "origen": "Semana 19-24/10: el borrador v1.0 se rehizo entero porque 6 de 6 piezas repetían la estructura slide por slide de la semana anterior con otro tema encima",
+      "tipo": "anti_repeticion_estructura",
+      "aplica_a": [
+        "pieza"
+      ],
+      "comparar_contra_ultimos_dias": 21,
+      "umbral_similitud": 0.6,
+      "severidad": "advierte",
+      "mensaje": "La secuencia de eyebrows es muy parecida a una pieza reciente. Cambiar el ángulo, no solo el tema."
+    }
+  ]
+}

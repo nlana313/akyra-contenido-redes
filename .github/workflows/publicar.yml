@@ -31,8 +31,25 @@ jobs:
         with:
           python-version: "3.12"
 
+      # Se verifica SIEMPRE antes de publicar, no solo al generar: una regla
+      # nueva (nacida de una corrección de Nicolás) puede haber aparecido después
+      # de que el lote se armó. El `|| true` es a propósito — un bloqueo no debe
+      # cortar el workflow, sino dejar el lote sin auto-aprobar, que es lo que
+      # publicar.py comprueba a continuación.
+      - name: Verificar contra las reglas de marca
+        run: python3 scripts/verificar.py || true
+
       - name: Publicar lo que corresponda
         env:
           WINDSOR_API_KEY: ${{ secrets.WINDSOR_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
         run: python3 scripts/publicar.py
+
+      - name: Guardar el resultado de la verificación
+        if: always()
+        run: |
+          git config user.name "AKYRA Motor de Redes"
+          git config user.email "motor@akyra.local"
+          git add cola.json
+          git diff --staged --quiet || git commit -m "Verificación del lote (automático)"
+          git push || true

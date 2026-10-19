@@ -143,7 +143,13 @@
           "intentos": 0,
           "ultimo_error": null
         }
-      ]
+      ],
+      "verificacion": {
+        "estado": "ok",
+        "verificado_el": "2026-10-19T13:18:56",
+        "bloqueos": 0,
+        "avisos": 0
+      }
     }
   ]
 }
