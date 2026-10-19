@@ -40,8 +40,11 @@ API = "https://connectors.windsor.ai/{connector}/actions"
 # así que `raw.githubusercontent.com` alcanza para las imágenes. Para video
 # conviene GitHub Pages, que lo sirve como `video/mp4` en vez de
 # `application/octet-stream` (ver LEEME_Automatizacion.md).
-BASE_URL = os.environ.get(
-    "BASE_URL", "https://raw.githubusercontent.com/nlana313/akyra-contenido-redes/main")
+_URLS = CONFIG.get("urls_publicas", {})
+BASE_IMAGENES = os.environ.get("BASE_URL") or _URLS.get(
+    "imagenes", "https://raw.githubusercontent.com/nlana313/akyra-contenido-redes/main")
+BASE_VIDEOS = os.environ.get("BASE_URL_VIDEOS") or _URLS.get("videos", BASE_IMAGENES)
+VIDEO_EXT = (".mp4", ".mov")
 
 ACCIONES = {
     "carrusel": "create_carousel_post",
@@ -52,7 +55,8 @@ ACCIONES = {
 
 
 def url_publica(ruta_relativa):
-    return f"{BASE_URL}/{urllib.parse.quote(ruta_relativa)}"
+    base = BASE_VIDEOS if ruta_relativa.lower().endswith(VIDEO_EXT) else BASE_IMAGENES
+    return f"{base}/{urllib.parse.quote(ruta_relativa)}"
 
 
 def armar_params(pieza):
