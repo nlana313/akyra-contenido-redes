@@ -34,8 +34,9 @@
     "exige_verificacion_limpia": true
   },
   "urls_publicas": {
-    "_comentario": "De dónde descarga Instagram cada archivo. Las imágenes van por raw.githubusercontent, que las sirve bien y se actualiza apenas se pushea. Los videos van por GitHub Pages, porque raw los entrega como application/octet-stream y la API de Instagram a veces los rechaza por eso; Pages los sirve como video/mp4. La contra de Pages es que tarda ~1 min en reflejar un push, lo cual no molesta porque los reels se suben días antes de su horario.",
+    "_comentario": "De dónde descarga Instagram cada archivo. Las imágenes van por raw.githubusercontent (sirve bien el JPEG y refleja un push al instante). Los videos van por el CDN jsDelivr, que los entrega como video/mp4 — raw los manda como application/octet-stream y la API de Instagram a veces los rechaza por eso. Se probó antes con GitHub Pages: el build del repo falla (no es un sitio, es una carpeta de assets con nombres con espacios), así que se descartó.",
+    "_nota_sha": "La base de videos lleva {sha} y se reemplaza en runtime por el commit exacto. jsDelivr cachea agresivamente una rama: si un reel se vuelve a renderizar pisando el archivo anterior — cosa que ya pasó, ver el repost de la semana 13-16/10 — con @main podría servirse el video viejo. Con el SHA la URL es inmutable y ese problema no existe.",
     "imagenes": "https://raw.githubusercontent.com/nlana313/akyra-contenido-redes/main",
-    "videos": "https://nlana313.github.io/akyra-contenido-redes"
+    "videos": "https://cdn.jsdelivr.net/gh/nlana313/akyra-contenido-redes@{sha}"
   }
 }

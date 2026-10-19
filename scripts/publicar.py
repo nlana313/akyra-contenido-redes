@@ -43,8 +43,24 @@ API = "https://connectors.windsor.ai/{connector}/actions"
 _URLS = CONFIG.get("urls_publicas", {})
 BASE_IMAGENES = os.environ.get("BASE_URL") or _URLS.get(
     "imagenes", "https://raw.githubusercontent.com/nlana313/akyra-contenido-redes/main")
-BASE_VIDEOS = os.environ.get("BASE_URL_VIDEOS") or _URLS.get("videos", BASE_IMAGENES)
 VIDEO_EXT = (".mp4", ".mov")
+
+
+def _commit_actual():
+    """SHA del commit publicado, para armar URLs de video inmutables."""
+    sha = os.environ.get("GITHUB_SHA")
+    if sha:
+        return sha
+    try:
+        import subprocess
+        return subprocess.run(["git", "-C", RAIZ, "rev-parse", "HEAD"],
+                              capture_output=True, text=True, check=True).stdout.strip()
+    except Exception:
+        return "main"
+
+
+BASE_VIDEOS = (os.environ.get("BASE_URL_VIDEOS")
+               or _URLS.get("videos", BASE_IMAGENES)).replace("{sha}", _commit_actual())
 
 ACCIONES = {
     "carrusel": "create_carousel_post",
