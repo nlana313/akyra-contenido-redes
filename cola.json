@@ -50,7 +50,7 @@
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
-          "intentos": 2,
+          "intentos": 3,
           "ultimo_error": "HTTP 400: {\"error\":\"No instagram accounts are configured for akyraconsultoragmailcom. Select your accounts at https://onboard.windsor.ai?datasource=instagram\",\"code\":\"no_accounts_configured\",\"details\":{\"connect_url\":\"https://onboard.windsor.ai?datasource=instagram\"}}\n"
         },
         {
@@ -146,7 +146,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-20T18:25:46",
+        "verificado_el": "2026-10-20T22:12:00",
         "bloqueos": 0,
         "avisos": 0
       }
