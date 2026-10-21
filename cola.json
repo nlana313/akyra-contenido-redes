@@ -46,7 +46,7 @@
             "publicar/2026-10-20/06.jpg"
           ],
           "caption": "Si elaborás o vendés alimentos, esto te interesa: desde el Decreto 697/2026, el carnet de manipulador vale en todo el país y no vence una vez otorgado. Un trámite menos.\n\nPero lo importante no cambió: las Buenas Prácticas de Manufactura siguen siendo obligatorias. Menos trámite no es menos control. Repasar lo básico con tu equipo antes de cada temporada sigue siendo tu mejor seguro.\n\n¿Cada cuánto lo repasan? Contanos en los comentarios.\n\n#emprendedorargentino #microempresas #seguridadalimentaria #IngenieríaConPropósito #SanRafael",
-          "estado": "pendiente",
+          "estado": "error",
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
@@ -146,7 +146,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-20T22:12:00",
+        "verificado_el": "2026-10-21T01:25:50",
         "bloqueos": 0,
         "avisos": 0
       }
