@@ -46,12 +46,14 @@
             "publicar/2026-10-20/06.jpg"
           ],
           "caption": "Si elaborás o vendés alimentos, esto te interesa: desde el Decreto 697/2026, el carnet de manipulador vale en todo el país y no vence una vez otorgado. Un trámite menos.\n\nPero lo importante no cambió: las Buenas Prácticas de Manufactura siguen siendo obligatorias. Menos trámite no es menos control. Repasar lo básico con tu equipo antes de cada temporada sigue siendo tu mejor seguro.\n\n¿Cada cuánto lo repasan? Contanos en los comentarios.\n\n#emprendedorargentino #microempresas #seguridadalimentaria #IngenieríaConPropósito #SanRafael",
-          "estado": "error",
-          "media_id": null,
+          "estado": "publicado",
+          "media_id": "18642114322029179",
           "permalink": null,
-          "publicado_el": null,
+          "publicado_el": "2026-10-22T15:33:14",
           "intentos": 3,
-          "ultimo_error": "HTTP 400: {\"error\":\"No instagram accounts are configured for akyraconsultoragmailcom. Select your accounts at https://onboard.windsor.ai?datasource=instagram\",\"code\":\"no_accounts_configured\",\"details\":{\"connect_url\":\"https://onboard.windsor.ai?datasource=instagram\"}}\n"
+          "ultimo_error": null,
+          "publicado_a_mano": true,
+          "nota": "Falló 3 veces en su fecha original (20/10) por cuenta de Instagram no configurada en Windsor. Reprogramado y publicado a mano el 22/10 tras reconectar la cuenta."
         },
         {
           "id": "2026-10-21-reel",
