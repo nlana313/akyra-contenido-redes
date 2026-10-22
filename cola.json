@@ -87,8 +87,8 @@
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
-          "intentos": 1,
-          "ultimo_error": "HTTP 400: {\"error\":\"No instagram accounts are configured for akyraconsultoragmailcom. Select your accounts at https://onboard.windsor.ai?datasource=instagram\",\"code\":\"no_accounts_configured\",\"details\":{\"connect_url\":\"https://onboard.windsor.ai?datasource=instagram\"}}\n"
+          "intentos": 2,
+          "ultimo_error": "HTTP 400: {\"error\":\"Please check the API key used: d6965924ab3841a2ac18f6dd49778612497e\",\"code\":\"user_error\"}\n"
         },
         {
           "id": "2026-10-23-carrusel",
@@ -146,7 +146,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-22T13:40:46",
+        "verificado_el": "2026-10-22T18:27:20",
         "bloqueos": 0,
         "avisos": 0
       }
