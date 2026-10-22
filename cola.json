@@ -62,7 +62,7 @@
             "2026-10-21/v2_motor/Reel_Stock_Parado_LISTO.mp4"
           ],
           "caption": "En julio, las pymes industriales relevadas por CAME contaron que evitaron acumular stock parado para cuidar la caja. En un comercio o emprendimiento pasa lo mismo: cada producto quieto en la estantería es plata que no podés usar.\n\nComprá según lo que rota, no por las dudas, y revisá qué no se vendió en los últimos 60 días.\n\nContanos en los comentarios qué producto se te queda quieto.\n\n#emprendedorargentino #microempresas #mejoracontinua #IngenieríaConPropósito #SanRafael",
-          "estado": "pendiente",
+          "estado": "error",
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
@@ -146,7 +146,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-21T22:13:48",
+        "verificado_el": "2026-10-22T01:23:49",
         "bloqueos": 0,
         "avisos": 0
       }
