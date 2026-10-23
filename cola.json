@@ -83,7 +83,7 @@
             "publicar/2026-10-22/06.jpg"
           ],
           "caption": "La ciruela del Sur se exporta mayormente a granel: se reprocesa y se reenvasa en destino, y ese margen se queda afuera, como explicó Oscar Morbidelli (AACI) en LV18. Chile, en cambio, vende buena parte fraccionada.\n\nDar ese paso exige un sistema de calidad que funcione todos los días: inocuidad, envase, rótulo y trazabilidad, según lo que pida cada comprador. En AKYRA te acompañamos en la implementación.\n\nEscribinos y hablamos.\n\n#agroindustria #ciruela #exportación #IngenieríaConPropósito #SanRafael",
-          "estado": "pendiente",
+          "estado": "error",
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
@@ -146,7 +146,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-22T22:13:42",
+        "verificado_el": "2026-10-23T01:22:26",
         "bloqueos": 0,
         "avisos": 0
       }
