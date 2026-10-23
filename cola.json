@@ -154,6 +154,159 @@
         "bloqueos": 0,
         "avisos": 0
       }
+    },
+    {
+      "id": "lote-20261023-1227",
+      "rango": "2026-10-26 a 2026-10-31",
+      "creado_el": "2026-10-23T12:27:53",
+      "aprobado": false,
+      "aprobado_por": null,
+      "aprobado_el": null,
+      "piezas": [
+        {
+          "id": "2026-10-26-carrusel",
+          "fecha": "2026-10-26",
+          "formato": "carrusel",
+          "fecha_hora_local": "2026-10-26T09:00:00",
+          "assets": [
+            "publicar/2026-10-26/01.jpg",
+            "publicar/2026-10-26/02.jpg",
+            "publicar/2026-10-26/03.jpg",
+            "publicar/2026-10-26/04.jpg",
+            "publicar/2026-10-26/05.jpg",
+            "publicar/2026-10-26/06.jpg"
+          ],
+          "caption": "Mendoza arranca la cosecha de cereza a fines de octubre y llega antes que otros países a Estados Unidos, Europa y Asia. Esa ventana de entrada temprana define el precio que se consigue esa temporada.\n\nPero una fruta así no espera un proceso lento: frío, envase y trazabilidad tienen que funcionar desde el primer día. Una empresa con un sistema de calidad sostenido sumó 12 países en 18 meses y bajó 94% los rechazos en aduana.\n\nEscribinos y hablamos sobre tu proceso.\n\n#agroindustria #cereza #exportación #IngenieríaConPropósito #SanRafael",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-27-carrusel",
+          "fecha": "2026-10-27",
+          "formato": "carrusel",
+          "fecha_hora_local": "2026-10-27T09:00:00",
+          "assets": [
+            "publicar/2026-10-27/01.jpg",
+            "publicar/2026-10-27/02.jpg",
+            "publicar/2026-10-27/03.jpg",
+            "publicar/2026-10-27/04.jpg",
+            "publicar/2026-10-27/05.jpg",
+            "publicar/2026-10-27/06.jpg"
+          ],
+          "caption": "¿Cuánto tardás en armar un presupuesto? Con IA, un primer borrador sale en segundos: le das los datos del trabajo (qué vendés, cantidad, precio y forma de pago) y le pedís un formato prolijo, no solo el número final.\n\nEjemplo: «Armame un presupuesto con estos ítems, cantidades y precios, con total al final». Guardalo como plantilla y la próxima vez solo cambiás los datos.\n\n¿Cuánto tardás en armar uno hoy? Contanos en los comentarios.\n\n#IAparaemprendedores #inteligenciaartificial #emprendedorargentino #productividad #AKYRA",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-28-reel",
+          "fecha": "2026-10-28",
+          "formato": "reel",
+          "fecha_hora_local": "2026-10-28T09:00:00",
+          "assets": [
+            "2026-10-28/v2_motor/AKYRA_Reel_MantenimientoPreventivo.mp4"
+          ],
+          "caption": "El mantenimiento preventivo cuesta entre 2% y 5% del presupuesto operativo anual. Una parada de máquina sin aviso puede salir hasta 10 veces más caro que eso.\n\nLa diferencia no es la máquina: es si alguien la revisa antes de que falle. Limpiar e inspeccionar cada semana ya detecta fugas, piezas sueltas o desgaste antes de que frenen la línea.\n\nContanos cuándo fue la última parada no planificada de tu línea.\n\n#leanmanufacturing #mantenimiento #mejoracontinua #PyMEArgentina #IngenieríaConPropósito",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-29-carrusel",
+          "fecha": "2026-10-29",
+          "formato": "carrusel",
+          "fecha_hora_local": "2026-10-29T09:00:00",
+          "assets": [
+            "publicar/2026-10-29/01.jpg",
+            "publicar/2026-10-29/02.jpg",
+            "publicar/2026-10-29/03.jpg",
+            "publicar/2026-10-29/04.jpg",
+            "publicar/2026-10-29/05.jpg",
+            "publicar/2026-10-29/06.jpg"
+          ],
+          "caption": "Metalmecánica adoptó IA en un 40,6% de las empresas; alimentos, en un 29,9%. Son los datos de la primera encuesta nacional a 402 pymes argentinas. Software lidera con 85,4% y textil sigue con 47,4%.\n\nLo más usado es generar texto y código (77,9% de las que ya la adoptaron). El freno no es el interés: solo el 4% tiene presupuesto asignado para esto.\n\nPor eso conviene empezar con una tarea puntual, no con un sistema completo. Escribinos y hablamos.\n\n#inteligenciaartificial #PyMEindustrial #metalmecánica #IngenieríaConPropósito #SanRafael",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-30-carrusel",
+          "fecha": "2026-10-30",
+          "formato": "carrusel",
+          "fecha_hora_local": "2026-10-30T09:00:00",
+          "assets": [
+            "publicar/2026-10-30/01.jpg",
+            "publicar/2026-10-30/02.jpg",
+            "publicar/2026-10-30/03.jpg",
+            "publicar/2026-10-30/04.jpg",
+            "publicar/2026-10-30/05.jpg",
+            "publicar/2026-10-30/06.jpg"
+          ],
+          "caption": "ISO 9001 se actualizó en septiembre y suma algo nuevo: le pide cultura de calidad y comportamiento ético a quien lidera, no solo procesos escritos.\n\nEso se traduce simple: cumplir un compromiso con el cliente aunque duela, avisar un atraso a tiempo, explicarle al equipo por qué se decide algo. Si el dueño no lo sostiene con el ejemplo, ningún manual aguanta solo.\n\n¿Tu equipo sabe por qué decidís lo que decidís? Escribinos y hablamos.\n\n#ISO9001 #calidad #emprendedorargentino #IngenieríaConPropósito #AKYRA",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-31-carrusel",
+          "fecha": "2026-10-31",
+          "formato": "carrusel",
+          "fecha_hora_local": "2026-10-31T09:00:00",
+          "assets": [
+            "publicar/2026-10-31/01.jpg",
+            "publicar/2026-10-31/02.jpg",
+            "publicar/2026-10-31/03.jpg",
+            "publicar/2026-10-31/04.jpg",
+            "publicar/2026-10-31/05.jpg",
+            "publicar/2026-10-31/06.jpg"
+          ],
+          "caption": "Mejora continua suena a fábrica grande, pero funciona igual en un local chico: cada segundo buscando algo es un segundo que no estás vendiendo.\n\nSi algo funciona así hace años, no significa que no haya nada para mejorar — lo que no se mide, se sigue haciendo mal sin que nadie lo note.\n\nUn cambio simple: elegí un lugar fijo para lo que más usás, empezando por la caja o el mostrador.\n\n¿Cuánto tardás en encontrar algo puntual? Contanos en los comentarios.\n\n#mejoracontinua #emprendedorargentino #microempresas #IngenieríaConPropósito #SanRafael",
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        },
+        {
+          "id": "2026-10-31-historia",
+          "fecha": "2026-10-31",
+          "formato": "historia",
+          "fecha_hora_local": "2026-10-31T12:00:00",
+          "assets": [
+            "publicar/2026-10-31/historia.jpg"
+          ],
+          "caption": null,
+          "estado": "pendiente",
+          "media_id": null,
+          "permalink": null,
+          "publicado_el": null,
+          "intentos": 0,
+          "ultimo_error": null
+        }
+      ],
+      "verificacion": {
+        "estado": "ok",
+        "verificado_el": "2026-10-23T12:28:03",
+        "bloqueos": 0,
+        "avisos": 0
+      }
     }
   ]
 }
