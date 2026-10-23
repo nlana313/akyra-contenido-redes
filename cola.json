@@ -64,12 +64,14 @@
             "2026-10-21/v2_motor/Reel_Stock_Parado_LISTO.mp4"
           ],
           "caption": "En julio, las pymes industriales relevadas por CAME contaron que evitaron acumular stock parado para cuidar la caja. En un comercio o emprendimiento pasa lo mismo: cada producto quieto en la estantería es plata que no podés usar.\n\nComprá según lo que rota, no por las dudas, y revisá qué no se vendió en los últimos 60 días.\n\nContanos en los comentarios qué producto se te queda quieto.\n\n#emprendedorargentino #microempresas #mejoracontinua #IngenieríaConPropósito #SanRafael",
-          "estado": "error",
-          "media_id": null,
+          "estado": "publicado",
+          "media_id": "17958753633253359",
           "permalink": null,
-          "publicado_el": null,
+          "publicado_el": "2026-10-23T10:51:38",
           "intentos": 3,
-          "ultimo_error": "HTTP 400: {\"error\":\"No instagram accounts are configured for akyraconsultoragmailcom. Select your accounts at https://onboard.windsor.ai?datasource=instagram\",\"code\":\"no_accounts_configured\",\"details\":{\"connect_url\":\"https://onboard.windsor.ai?datasource=instagram\"}}\n"
+          "ultimo_error": null,
+          "publicado_a_mano": true,
+          "nota": "Falló 3 veces en su fecha original (21/10) por cuenta de Instagram no configurada en Windsor. Reprogramado y publicado a mano el 23/10."
         },
         {
           "id": "2026-10-22-carrusel",
