@@ -124,12 +124,12 @@
             "2026-10-24/v2_motor/Reel_Si_Vos_No_Estas_LISTO.mp4"
           ],
           "caption": "Si vos no estás, ¿la planta se frena o se hace mal? Ese es el problema, no vos.\n\nCuando todo pasa por el dueño, el dueño se convierte en el cuello de botella. Dos pasos para empezar: escribí cómo se hacen las tareas que más se repiten, y definí qué decisiones puede tomar el equipo sin llamarte.\n\nContanos en los comentarios qué decisión todavía pasa solo por vos.\n\n#mejoracontinua #leanmanufacturing #PyMEArgentina #IngenieríaConPropósito #SanRafael",
-          "estado": "pendiente",
-          "media_id": null,
+          "estado": "publicado",
+          "media_id": "18118212365087189",
           "permalink": null,
-          "publicado_el": null,
+          "publicado_el": "2026-10-24T16:11:51",
           "intentos": 2,
-          "ultimo_error": "HTTP 400: {\"error\":\"Please check the API key used: d6965924ab3841a2ac18f6dd49778612497e\",\"code\":\"user_error\"}\n"
+          "ultimo_error": null
         },
         {
           "id": "2026-10-24-historia",
@@ -140,12 +140,12 @@
             "publicar/2026-10-24/historia.jpg"
           ],
           "caption": null,
-          "estado": "pendiente",
-          "media_id": null,
+          "estado": "publicado",
+          "media_id": "18170675482475537",
           "permalink": null,
-          "publicado_el": null,
+          "publicado_el": "2026-10-24T16:11:51",
           "intentos": 1,
-          "ultimo_error": "HTTP 400: {\"error\":\"Please check the API key used: d6965924ab3841a2ac18f6dd49778612497e\",\"code\":\"user_error\"}\n"
+          "ultimo_error": null
         }
       ],
       "verificacion": {
