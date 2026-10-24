@@ -144,8 +144,8 @@
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
-          "intentos": 0,
-          "ultimo_error": null
+          "intentos": 1,
+          "ultimo_error": "HTTP 400: {\"error\":\"Please check the API key used: d6965924ab3841a2ac18f6dd49778612497e\",\"code\":\"user_error\"}\n"
         }
       ],
       "verificacion": {
