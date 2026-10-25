@@ -159,9 +159,9 @@
       "id": "lote-20261023-1227",
       "rango": "2026-10-26 a 2026-10-31",
       "creado_el": "2026-10-23T12:27:53",
-      "aprobado": false,
-      "aprobado_por": null,
-      "aprobado_el": null,
+      "aprobado": true,
+      "aprobado_por": "auto (verificación limpia + ventana de objeción)",
+      "aprobado_el": "2026-10-25T02:51:59-03:00",
       "piezas": [
         {
           "id": "2026-10-26-carrusel",
@@ -303,7 +303,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-25T00:09:50",
+        "verificado_el": "2026-10-25T05:51:59",
         "bloqueos": 0,
         "avisos": 0
       }
