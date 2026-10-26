@@ -24,6 +24,7 @@ Variables de entorno:
 """
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -117,6 +118,24 @@ def id_de_media(respuesta):
                 if capa.get(k):
                     return str(capa[k])
     return None
+
+
+def _sin_secretos(texto):
+    """Saca de un mensaje de error cualquier cosa con forma de credencial.
+
+    Windsor devuelve la API key DENTRO del cuerpo del error ("Please check the
+    API key used: <key>"), y ese cuerpo se guardaba tal cual en cola.json, que se
+    commitea a un repositorio público. Así se filtró la key el 22/10/2026. Nada
+    que venga de una respuesta HTTP se guarda sin pasar por acá.
+    """
+    if not texto:
+        return texto
+    clave = os.environ.get("WINDSOR_API_KEY")
+    if clave and len(clave) > 6:
+        texto = texto.replace(clave, "[API KEY OCULTA]")
+    # Red de seguridad: cualquier cadena hexadecimal larga suelta en el mensaje.
+    texto = re.sub(r"\b[0-9a-f]{24,}\b", "[OCULTO]", texto, flags=re.IGNORECASE)
+    return texto
 
 
 def guardar(cola):
@@ -241,11 +260,11 @@ def main():
                     publicados_hoy.add(pieza["fecha"])
                 print(f"  ✓ publicado — media_id {pieza['media_id']}")
             except urllib.error.HTTPError as e:
-                detalle = e.read().decode("utf-8", "replace")[:500]
+                detalle = _sin_secretos(e.read().decode("utf-8", "replace")[:500])
                 pieza["ultimo_error"] = f"HTTP {e.code}: {detalle}"
                 print(f"  ✗ {pieza['ultimo_error']}")
             except Exception as e:  # red caída, timeout de Instagram, etc.
-                pieza["ultimo_error"] = f"{type(e).__name__}: {e}"
+                pieza["ultimo_error"] = _sin_secretos(f"{type(e).__name__}: {e}")
                 print(f"  ✗ {pieza['ultimo_error']}")
 
             algo = True

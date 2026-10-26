@@ -92,7 +92,7 @@
           "permalink": null,
           "publicado_el": null,
           "intentos": 3,
-          "ultimo_error": "HTTP 400: {\"error\":\"Please check the API key used: d6965924ab3841a2ac18f6dd49778612497e\",\"code\":\"user_error\"}\n"
+          "ultimo_error": "HTTP 400: {\"error\":\"Please check the API key used: [OCULTO]\",\"code\":\"user_error\"}\n"
         },
         {
           "id": "2026-10-23-carrusel",
@@ -113,7 +113,7 @@
           "permalink": null,
           "publicado_el": null,
           "intentos": 3,
-          "ultimo_error": "HTTP 400: {\"error\":\"Please check the API key used: d6965924ab3841a2ac18f6dd49778612497e\",\"code\":\"user_error\"}\n"
+          "ultimo_error": "HTTP 400: {\"error\":\"Please check the API key used: [OCULTO]\",\"code\":\"user_error\"}\n"
         },
         {
           "id": "2026-10-24-reel",
