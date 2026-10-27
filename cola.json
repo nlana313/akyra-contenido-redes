@@ -202,8 +202,8 @@
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
-          "intentos": 0,
-          "ultimo_error": null
+          "intentos": 1,
+          "ultimo_error": "HTTP 400: {\"error\":\"Please check the API key used: [API KEY OCULTA]\",\"code\":\"user_error\"}\n"
         },
         {
           "id": "2026-10-28-reel",
@@ -303,7 +303,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-27T10:19:25",
+        "verificado_el": "2026-10-27T16:21:37",
         "bloqueos": 0,
         "avisos": 0
       }
