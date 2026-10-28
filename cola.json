@@ -188,7 +188,7 @@
           "id": "2026-10-27-carrusel",
           "fecha": "2026-10-27",
           "formato": "carrusel",
-          "fecha_hora_local": "2026-10-27T09:00:00",
+          "fecha_hora_local": "2026-11-02T09:00:00",
           "assets": [
             "publicar/2026-10-27/01.jpg",
             "publicar/2026-10-27/02.jpg",
@@ -198,12 +198,13 @@
             "publicar/2026-10-27/06.jpg"
           ],
           "caption": "¿Cuánto tardás en armar un presupuesto? Con IA, un primer borrador sale en segundos: le das los datos del trabajo (qué vendés, cantidad, precio y forma de pago) y le pedís un formato prolijo, no solo el número final.\n\nEjemplo: «Armame un presupuesto con estos ítems, cantidades y precios, con total al final». Guardalo como plantilla y la próxima vez solo cambiás los datos.\n\n¿Cuánto tardás en armar uno hoy? Contanos en los comentarios.\n\n#IAparaemprendedores #inteligenciaartificial #emprendedorargentino #productividad #AKYRA",
-          "estado": "error",
+          "estado": "pendiente",
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
-          "intentos": 3,
-          "ultimo_error": "HTTP 400: {\"error\":\"Please check the API key used: [API KEY OCULTA]\",\"code\":\"user_error\"}\n"
+          "intentos": 0,
+          "ultimo_error": null,
+          "reprogramada": "del 27/10 al 02/11: no salió por la cuota de Windsor y se pasó la ventana. Decisión de Nicolás el 28/10."
         },
         {
           "id": "2026-10-28-reel",

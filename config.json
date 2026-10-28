@@ -39,8 +39,8 @@
     "imagenes": "https://raw.githubusercontent.com/nlana313/akyra-contenido-redes/main",
     "videos": "https://cdn.jsdelivr.net/gh/nlana313/akyra-contenido-redes@{sha}"
   },
-  "respaldo_worker_horas": 6,
-  "_nota_respaldo": "Desde el 28/10/2026 la vía principal de publicación es una tarea diaria de Claude que usa el conector MCP de Windsor — la API REST que usa el worker viene rebotando por la cuota del plan Free. El worker de GitHub Actions queda como red de seguridad: solo toca una pieza que lleve más de `respaldo_worker_horas` de atraso, es decir, cuando la tarea diaria no corrió (la app estaba cerrada). Así los dos caminos no compiten por la misma pieza ni la publican dos veces.",
+  "respaldo_worker_horas": 0,
+  "_nota_respaldo": "Desde el 28/10/2026, con el token de Meta andando, el worker de GitHub Actions vuelve a ser la vía principal: publica a la hora exacta sin depender de que la Mac esté prendida. La espera de respaldo queda en 0 y la tarea diaria de Claude se desactivó, para que no haya dos sistemas publicando la misma pieza.",
   "meta": {
     "_comentario": "Publicación directa por la API de Meta: es la misma API que Windsor usa por debajo, pero sin intermediario ni cuota de un plan de terceros. Publicar en Instagram no tiene costo. Necesita el secret META_ACCESS_TOKEN en el repositorio.",
     "api_version": "v26.0"
