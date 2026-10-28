@@ -202,7 +202,7 @@
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
-          "intentos": 2,
+          "intentos": 3,
           "ultimo_error": "HTTP 400: {\"error\":\"Please check the API key used: [API KEY OCULTA]\",\"code\":\"user_error\"}\n"
         },
         {
@@ -303,7 +303,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-27T21:10:56",
+        "verificado_el": "2026-10-28T01:05:26",
         "bloqueos": 0,
         "avisos": 0
       }
