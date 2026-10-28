@@ -1,0 +1,23 @@
+name: Verificar token de Meta
+
+# Comprueba que el token de Meta sirve y a qué cuenta apunta, sin publicar nada.
+# Útil al cargarlo por primera vez y cada vez que se renueva: si el token está
+# vencido o le falta un permiso, es preferible enterarse acá y no a las 9 de la
+# mañana cuando una pieza no sale.
+on:
+  workflow_dispatch:
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Consultar la cuenta de Instagram
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+        run: python3 scripts/meta.py
