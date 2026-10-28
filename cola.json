@@ -214,12 +214,13 @@
             "2026-10-28/v2_motor/AKYRA_Reel_MantenimientoPreventivo.mp4"
           ],
           "caption": "El mantenimiento preventivo cuesta entre 2% y 5% del presupuesto operativo anual. Una parada de máquina sin aviso puede salir hasta 10 veces más caro que eso.\n\nLa diferencia no es la máquina: es si alguien la revisa antes de que falle. Limpiar e inspeccionar cada semana ya detecta fugas, piezas sueltas o desgaste antes de que frenen la línea.\n\nContanos cuándo fue la última parada no planificada de tu línea.\n\n#leanmanufacturing #mantenimiento #mejoracontinua #PyMEArgentina #IngenieríaConPropósito",
-          "estado": "pendiente",
-          "media_id": null,
+          "estado": "publicado",
+          "media_id": "18168316741486759",
           "permalink": null,
-          "publicado_el": null,
+          "publicado_el": "2026-10-28T11:53:39",
           "intentos": 0,
-          "ultimo_error": null
+          "ultimo_error": null,
+          "publicado_fuera_del_worker": "vía conector MCP de Windsor (la API REST estaba rebotando por cuota)"
         },
         {
           "id": "2026-10-29-carrusel",
