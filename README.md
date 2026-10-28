@@ -23,8 +23,8 @@ accesibles sin credenciales. Lo que no es público es el motor que los genera
  4. APROBAR    automático a las 36 h si la verificación dio limpia,
                o a mano con scripts/aprobar.py. Con un solo bloqueo, el
                lote NUNCA se auto-aprueba: espera a una persona.
- 5. PUBLICAR   tarea diaria de Claude, 9:05, vía el conector MCP de Windsor
-               + GitHub Actions como respaldo si esa tarea no corrió (6 h)
+ 5. PUBLICAR   GitHub Actions, cada hora, directo por la API de Meta
+               publica cada pieza en su día y horario, sin intermediarios
  6. MEDIR      GitHub Actions, los lunes
                trae Insights y los deja en Metricas/
  7. CORREGIR   python3 scripts/corregir.py "lo que estuvo mal" --pieza ...
@@ -33,15 +33,23 @@ accesibles sin credenciales. Lo que no es público es el motor que los genera
                Correcciones.md y actualiza el motor
 ```
 
-El paso 6 corre en la nube. El 5 pasó a depender de una sesión de Claude el
-28/10/2026: la API REST de Windsor rebota por la cuota del plan Free, y el
-conector MCP (que usa otra autenticación) sí entra, pero solo existe dentro de
-una sesión. El worker de la nube quedó como red de seguridad — toca una pieza
-recién cuando lleva 6 h de atraso, o sea cuando la tarea diaria no corrió.
+Los pasos 5 y 6 corren en la nube: no hace falta que la Mac esté prendida ni
+que haya una sesión de Claude abierta.
 
-**Esto es un puente, no el destino.** Lo sano es volver a publicar desde la
-nube: plan pago de Windsor, o la API de Meta directa (publicar en Instagram no
-tiene costo; la misma API que Windsor usa por debajo).
+**Sobre la publicación:** se hace directo por la API de Meta (`scripts/meta.py`,
+secret `META_ACCESS_TOKEN`). Se usó Windsor hasta el 28/10/2026, pero su plan
+Free tiene una cuota que rebotaba una de cada tres piezas — reportada con un
+mensaje engañoso ("Please check the API key") que no tiene nada que ver con la
+key. Meta no cobra por publicar y es la misma API que Windsor usa por debajo.
+Windsor sigue siendo la fuente de **métricas**, donde la cuota no molesta.
+
+El proveedor es una línea en `config.json` (`proveedor_publicacion`), así que
+volver a Windsor no requiere tocar código.
+
+**El token de Meta vence.** Si se generó desde el Business Manager con un
+usuario del sistema, no vence. Si se generó con `scripts/token_meta.py`, dura
+60 días y hay que renovarlo con ese mismo script. Para comprobar en cualquier
+momento si sigue vivo, sin publicar nada: Actions → "Verificar token de Meta".
 
 ## Comandos del día a día
 
