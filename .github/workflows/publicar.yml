@@ -41,6 +41,7 @@ jobs:
 
       - name: Publicar lo que corresponda
         env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           WINDSOR_API_KEY: ${{ secrets.WINDSOR_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
         run: python3 scripts/publicar.py

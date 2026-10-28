@@ -32,6 +32,7 @@ import urllib.request
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG = json.load(open(os.path.join(RAIZ, "config.json"), encoding="utf-8"))
 COLA = os.path.join(RAIZ, "cola.json")
@@ -63,6 +64,9 @@ def _commit_actual():
 BASE_VIDEOS = (os.environ.get("BASE_URL_VIDEOS")
                or _URLS.get("videos", BASE_IMAGENES)).replace("{sha}", _commit_actual())
 
+PROVEEDOR = os.environ.get("PROVEEDOR_PUBLICACION") or CONFIG.get(
+    "proveedor_publicacion", "windsor")
+
 ACCIONES = {
     "carrusel": "create_carousel_post",
     "reel": "create_video_post",
@@ -90,6 +94,13 @@ def armar_params(pieza):
         clave = "video_url" if pieza["assets"][0].lower().endswith((".mp4", ".mov")) else "image_url"
         return {clave: urls[0]}
     raise ValueError(f"formato desconocido: {fmt}")
+
+
+def ejecutar_meta(pieza):
+    """Publica por la API de Meta. Devuelve el id del medio publicado."""
+    import meta
+    urls = [url_publica(a) for a in pieza["assets"]]
+    return meta.publicar(pieza, urls)
 
 
 def ejecutar(pieza, api_key):
@@ -191,7 +202,10 @@ def auto_aprobar(lote, ahora):
 def main():
     dry = os.environ.get("DRY_RUN") == "1"
     api_key = os.environ.get("WINDSOR_API_KEY")
-    if not api_key and not dry:
+    if PROVEEDOR == "meta" and not os.environ.get("META_ACCESS_TOKEN") and not dry:
+        print("ERROR: falta META_ACCESS_TOKEN (proveedor 'meta')", file=sys.stderr)
+        return 1
+    if PROVEEDOR != "meta" and not api_key and not dry:
         print("ERROR: falta WINDSOR_API_KEY", file=sys.stderr)
         return 1
 
@@ -262,9 +276,11 @@ def main():
 
             pieza["intentos"] += 1
             try:
-                resp = ejecutar(pieza, api_key)
+                if PROVEEDOR == "meta":
+                    pieza["media_id"] = ejecutar_meta(pieza)
+                else:
+                    pieza["media_id"] = id_de_media(ejecutar(pieza, api_key))
                 pieza["estado"] = "publicado"
-                pieza["media_id"] = id_de_media(resp)
                 pieza["publicado_el"] = ahora.isoformat(timespec="seconds")
                 pieza["ultimo_error"] = None
                 if es_feed:
