@@ -23,8 +23,8 @@ accesibles sin credenciales. Lo que no es público es el motor que los genera
  4. APROBAR    automático a las 36 h si la verificación dio limpia,
                o a mano con scripts/aprobar.py. Con un solo bloqueo, el
                lote NUNCA se auto-aprueba: espera a una persona.
- 5. PUBLICAR   GitHub Actions, cada hora, sin intervención
-               publica cada pieza en su día y horario vía Windsor.ai
+ 5. PUBLICAR   tarea diaria de Claude, 9:05, vía el conector MCP de Windsor
+               + GitHub Actions como respaldo si esa tarea no corrió (6 h)
  6. MEDIR      GitHub Actions, los lunes
                trae Insights y los deja en Metricas/
  7. CORREGIR   python3 scripts/corregir.py "lo que estuvo mal" --pieza ...
@@ -33,8 +33,15 @@ accesibles sin credenciales. Lo que no es público es el motor que los genera
                Correcciones.md y actualiza el motor
 ```
 
-Los pasos 4 y 5 corren en la nube: no hace falta que la Mac esté prendida ni
-que haya una sesión de Claude abierta.
+El paso 6 corre en la nube. El 5 pasó a depender de una sesión de Claude el
+28/10/2026: la API REST de Windsor rebota por la cuota del plan Free, y el
+conector MCP (que usa otra autenticación) sí entra, pero solo existe dentro de
+una sesión. El worker de la nube quedó como red de seguridad — toca una pieza
+recién cuando lleva 6 h de atraso, o sea cuando la tarea diaria no corrió.
+
+**Esto es un puente, no el destino.** Lo sano es volver a publicar desde la
+nube: plan pago de Windsor, o la API de Meta directa (publicar en Instagram no
+tiene costo; la misma API que Windsor usa por debajo).
 
 ## Comandos del día a día
 

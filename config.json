@@ -38,5 +38,7 @@
     "_nota_sha": "La base de videos lleva {sha} y se reemplaza en runtime por el commit exacto. jsDelivr cachea agresivamente una rama: si un reel se vuelve a renderizar pisando el archivo anterior — cosa que ya pasó, ver el repost de la semana 13-16/10 — con @main podría servirse el video viejo. Con el SHA la URL es inmutable y ese problema no existe.",
     "imagenes": "https://raw.githubusercontent.com/nlana313/akyra-contenido-redes/main",
     "videos": "https://cdn.jsdelivr.net/gh/nlana313/akyra-contenido-redes@{sha}"
-  }
+  },
+  "respaldo_worker_horas": 6,
+  "_nota_respaldo": "Desde el 28/10/2026 la vía principal de publicación es una tarea diaria de Claude que usa el conector MCP de Windsor — la API REST que usa el worker viene rebotando por la cuota del plan Free. El worker de GitHub Actions queda como red de seguridad: solo toca una pieza que lleve más de `respaldo_worker_horas` de atraso, es decir, cuando la tarea diaria no corrió (la app estaba cerrada). Así los dos caminos no compiten por la misma pieza ni la publican dos veces."
 }

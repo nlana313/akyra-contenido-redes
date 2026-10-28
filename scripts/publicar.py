@@ -228,6 +228,17 @@ def main():
                 print(f"! {pieza['id']}: VENCIDO — {pieza['ultimo_error']}")
                 algo = True
                 continue
+            # El worker es el respaldo, no la vía principal (ver _nota_respaldo en
+            # config.json): deja pasar unas horas para darle lugar a la tarea diaria,
+            # que publica por el conector MCP. Sin esta espera los dos caminos
+            # competirían por la misma pieza.
+            espera = timedelta(hours=CONFIG.get("respaldo_worker_horas", 0))
+            if espera and ahora - cuando < espera:
+                print(f"- {pieza['id']}: espera {CONFIG['respaldo_worker_horas']} h por si "
+                      f"la publica la tarea diaria (lleva "
+                      f"{int((ahora-cuando).total_seconds()//60)} min de atraso)")
+                continue
+
             es_feed = pieza["formato"] in CONFIG["reglas_duras"]["formatos_feed"]
             if es_feed and pieza["fecha"] in publicados_hoy:
                 pieza["estado"] = "bloqueado"
