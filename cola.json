@@ -237,11 +237,11 @@
             "publicar/2026-10-29/06.jpg"
           ],
           "caption": "Metalmecánica adoptó IA en un 40,6% de las empresas; alimentos, en un 29,9%. Son los datos de la primera encuesta nacional a 402 pymes argentinas. Software lidera con 85,4% y textil sigue con 47,4%.\n\nLo más usado es generar texto y código (77,9% de las que ya la adoptaron). El freno no es el interés: solo el 4% tiene presupuesto asignado para esto.\n\nPor eso conviene empezar con una tarea puntual, no con un sistema completo. Escribinos y hablamos.\n\n#inteligenciaartificial #PyMEindustrial #metalmecánica #IngenieríaConPropósito #SanRafael",
-          "estado": "pendiente",
-          "media_id": null,
+          "estado": "publicado",
+          "media_id": "17975522520070814",
           "permalink": null,
-          "publicado_el": null,
-          "intentos": 0,
+          "publicado_el": "2026-10-29T09:58:06-03:00",
+          "intentos": 1,
           "ultimo_error": null
         },
         {
@@ -305,7 +305,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-29T06:53:26",
+        "verificado_el": "2026-10-29T12:58:06",
         "bloqueos": 0,
         "avisos": 0
       }
