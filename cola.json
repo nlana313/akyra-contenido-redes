@@ -279,12 +279,12 @@
             "publicar/2026-10-31/06.jpg"
           ],
           "caption": "Mejora continua suena a fábrica grande, pero funciona igual en un local chico: cada segundo buscando algo es un segundo que no estás vendiendo.\n\nSi algo funciona así hace años, no significa que no haya nada para mejorar — lo que no se mide, se sigue haciendo mal sin que nadie lo note.\n\nUn cambio simple: elegí un lugar fijo para lo que más usás, empezando por la caja o el mostrador.\n\n¿Cuánto tardás en encontrar algo puntual? Contanos en los comentarios.\n\n#mejoracontinua #emprendedorargentino #microempresas #IngenieríaConPropósito #SanRafael",
-          "estado": "pendiente",
-          "media_id": null,
+          "estado": "publicado",
+          "media_id": "18113427206582495",
           "permalink": null,
-          "publicado_el": null,
-          "intentos": 1,
-          "ultimo_error": "ErrorMeta: El contenido multimedia no está listo para publicarse. Espera un momento. (código 9007)"
+          "publicado_el": "2026-10-31T14:36:09-03:00",
+          "intentos": 2,
+          "ultimo_error": null
         },
         {
           "id": "2026-10-31-historia",
@@ -305,7 +305,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-31T12:03:56",
+        "verificado_el": "2026-10-31T17:36:09",
         "bloqueos": 0,
         "avisos": 0
       }
