@@ -283,8 +283,8 @@
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
-          "intentos": 0,
-          "ultimo_error": null
+          "intentos": 1,
+          "ultimo_error": "ErrorMeta: El contenido multimedia no está listo para publicarse. Espera un momento. (código 9007)"
         },
         {
           "id": "2026-10-31-historia",
@@ -305,7 +305,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-31T05:08:08",
+        "verificado_el": "2026-10-31T12:03:56",
         "bloqueos": 0,
         "avisos": 0
       }
