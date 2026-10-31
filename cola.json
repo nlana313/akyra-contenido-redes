@@ -258,7 +258,7 @@
             "publicar/2026-10-30/06.jpg"
           ],
           "caption": "ISO 9001 se actualizó en septiembre y suma algo nuevo: le pide cultura de calidad y comportamiento ético a quien lidera, no solo procesos escritos.\n\nEso se traduce simple: cumplir un compromiso con el cliente aunque duela, avisar un atraso a tiempo, explicarle al equipo por qué se decide algo. Si el dueño no lo sostiene con el ejemplo, ningún manual aguanta solo.\n\n¿Tu equipo sabe por qué decidís lo que decidís? Escribinos y hablamos.\n\n#ISO9001 #calidad #emprendedorargentino #IngenieríaConPropósito #AKYRA",
-          "estado": "pendiente",
+          "estado": "error",
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
@@ -305,7 +305,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-10-30T23:34:48",
+        "verificado_el": "2026-10-31T05:08:08",
         "bloqueos": 0,
         "avisos": 0
       }
