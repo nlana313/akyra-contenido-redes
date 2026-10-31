@@ -295,11 +295,11 @@
             "publicar/2026-10-31/historia.jpg"
           ],
           "caption": null,
-          "estado": "pendiente",
-          "media_id": null,
+          "estado": "publicado",
+          "media_id": "18134059627687552",
           "permalink": null,
-          "publicado_el": null,
-          "intentos": 0,
+          "publicado_el": "2026-10-31T14:36:09-03:00",
+          "intentos": 1,
           "ultimo_error": null
         }
       ],
