@@ -202,8 +202,8 @@
           "media_id": null,
           "permalink": null,
           "publicado_el": null,
-          "intentos": 0,
-          "ultimo_error": null,
+          "intentos": 1,
+          "ultimo_error": "ErrorMeta: El contenido multimedia no está listo para publicarse. Espera un momento. (código 9007)",
           "reprogramada": "del 27/10 al 02/11: no salió por la cuota de Windsor y se pasó la ventana. Decisión de Nicolás el 28/10."
         },
         {
@@ -305,7 +305,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-11-02T05:36:51",
+        "verificado_el": "2026-11-02T15:27:02",
         "bloqueos": 0,
         "avisos": 0
       }
