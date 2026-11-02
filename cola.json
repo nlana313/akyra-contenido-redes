@@ -198,12 +198,12 @@
             "publicar/2026-10-27/06.jpg"
           ],
           "caption": "¿Cuánto tardás en armar un presupuesto? Con IA, un primer borrador sale en segundos: le das los datos del trabajo (qué vendés, cantidad, precio y forma de pago) y le pedís un formato prolijo, no solo el número final.\n\nEjemplo: «Armame un presupuesto con estos ítems, cantidades y precios, con total al final». Guardalo como plantilla y la próxima vez solo cambiás los datos.\n\n¿Cuánto tardás en armar uno hoy? Contanos en los comentarios.\n\n#IAparaemprendedores #inteligenciaartificial #emprendedorargentino #productividad #AKYRA",
-          "estado": "pendiente",
-          "media_id": null,
+          "estado": "publicado",
+          "media_id": "17991481212109626",
           "permalink": null,
-          "publicado_el": null,
-          "intentos": 1,
-          "ultimo_error": "ErrorMeta: El contenido multimedia no está listo para publicarse. Espera un momento. (código 9007)",
+          "publicado_el": "2026-11-02T20:23:17-03:00",
+          "intentos": 2,
+          "ultimo_error": null,
           "reprogramada": "del 27/10 al 02/11: no salió por la cuota de Windsor y se pasó la ventana. Decisión de Nicolás el 28/10."
         },
         {
@@ -305,7 +305,7 @@
       ],
       "verificacion": {
         "estado": "ok",
-        "verificado_el": "2026-11-02T15:27:02",
+        "verificado_el": "2026-11-02T23:23:17",
         "bloqueos": 0,
         "avisos": 0
       }
